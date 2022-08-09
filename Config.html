@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+  <?!= includeFile('Stylesheet'); ?>
+</head>
+
+<body>
+  <div id="main"></div>
+</body>
+<template>
+  <form onsubmit="saveConfig(this)">
+    <div id="bold">
+      <input type="hidden" name="bold" value='false'>
+      <input type="checkbox" name="bold" value='true' checked>
+      <label class="bold" for="bold">Bold</label>
+    </div>
+    <div id="italic">
+      <input type="hidden" name="italic" value='false'>
+      <input type="checkbox" name="italic" value='true' checked>
+      <label class="italic" for="italic">Italic</label>
+    </div>
+    <div id="underline">
+      <input type="hidden" name="underline" value='false'>
+      <input type="checkbox" name="underline" value='true' checked>
+      <label class="underline" for="underline">Underline</label>
+    </div>
+    <div id="color">
+      <input type="color" name="color" value="#000000">
+      <label for="color">Color</label>
+    </div>
+    <input type="submit" value="Save">
+  </form>
+</template>
+<?!= includeFile('JavaScript'); ?>
+
+</html>

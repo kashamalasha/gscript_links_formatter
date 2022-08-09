@@ -1,0 +1,41 @@
+<script>
+  const preventFormSubmit = () => {
+    let forms = document.querySelectorAll('form');
+    for (let i = 0; i < forms.length; i++) {
+      forms[i].addEventListener('submit', (event) => {
+        event.preventDefault();
+      });
+    }
+  }
+      
+  const saveConfig = (formData) => {
+    const formEntries = new FormData(formData).entries();
+    const formObject = Object.assign(...Array.from(formEntries, ([name, value]) => ({[name]: value})));
+
+    google.script.run.setDocProperties(formObject);
+    google.script.host.close();
+  }
+
+  const onSuccess = (docProperties) => {
+    const template = document.querySelector('template');
+    const clone = template.content.cloneNode(true);
+
+    const Input = {
+      bold: clone.querySelector('#bold > input[type=checkbox'),
+      italic: clone.querySelector('#italic > input[type=checkbox'),
+      underline: clone.querySelector('#underline > input[type=checkbox'),
+      color: clone.querySelector('#color > input[type=color]'),
+    }
+
+    Input.bold.checked = (docProperties.bold === "true");
+    Input.italic.checked = (docProperties.italic === "true");
+    Input.underline.checked = (docProperties.underline === "true");
+    Input.color.value = docProperties.color;
+
+    document.querySelector('#main').appendChild(clone);
+  }
+
+  window.addEventListener('load', preventFormSubmit);
+
+  google.script.run.withSuccessHandler(onSuccess).getDocProperties();
+</script>
