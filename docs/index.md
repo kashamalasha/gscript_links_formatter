@@ -1,12 +1,19 @@
-## Welcome to GitHub Pages
+## Welcome to Links formatter page
 
-You can use the [editor on GitHub](https://github.com/kashamalasha/gscript_links_formatter/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Links formatter is a tool that helps you to format every link in your document in same style in just few clicks.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How it works
 
-### Markdown
+1. Install the extenstion in your editor add on
+2. Select menu item `Extensions -> Links formatter -> Style setup` to set up link style for your document using modal dialog
+3. Select menu item `Extensions -> Links formatter -> Style apply` to apply saved format to all links in your document
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+setLinksStyle function is based on this gist https://gist.github.com/mogsdad/6518632 
+
+### Terms of service
+
+This add on is free to use in whatever manner you see fit. Enjoy!
+Main function based on this gist https://gist.github.com/mogsdad/6518632 
 
 ```markdown
 Syntax highlighted code block
