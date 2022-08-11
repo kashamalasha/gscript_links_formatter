@@ -1,1 +1,7 @@
-theme: jekyll-theme-cayman
+title: Links formatter
+email: dmitry.burnyshev@gmail.com
+description: Links formatter - an add on for Google docs (tm) editor to format all links in your document
+baseurl: /gscript_links_formatter
+url: https://kashamalasha.github.io
+domain: kashamalasha.github.io
+theme: minima
